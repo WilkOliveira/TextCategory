@@ -3,6 +3,7 @@ package textcategory;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -31,8 +32,10 @@ public class TextCategory {
                         linhasDoArquivo = leitor.nextLine(); // Variavel "linhasDoArquivo" recebe proxíma linha disponível no arquivo
                         
                         String[] txtEntreVirgula = linhasDoArquivo.split(","); // Cria um vetor com uma semparação de coluna cada ","
+                        StringTokenizer a=new StringTokenizer(linhasDoArquivo);
                         
                         System.out.println(txtEntreVirgula[0]);
+                        System.out.println(a.countTokens());
                         
                     }
             
