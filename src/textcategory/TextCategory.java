@@ -33,8 +33,6 @@ public class TextCategory {
                         
                         linhasDoArquivo = arquivo.nextLine(); // Variavel "linhasDoArquivo" recebe proxíma linha disponível no arquivo
                         
-                        // String[] palavra = linhasDoArquivo.split("tecnology"); // Cria um vetor de Strings com a palavra "tecnology"
-                        
                         String[] txtEntreVirgula = linhasDoArquivo.split(","); // Cria um vetor de Strings com uma semparação de coluna cada ","
                         /**
                          * Conta a quantidade de palavras em cada coluna/linha
@@ -59,9 +57,9 @@ public class TextCategory {
                         //System.out.println(title.countTokens());
                         //System.out.println(category.countTokens());
                         //System.out.println(text.countTokens());
-                         System.out.println(technologyCategory);
+                         
                     }
-            
+
         } catch (FileNotFoundException ex) {
             
         }
