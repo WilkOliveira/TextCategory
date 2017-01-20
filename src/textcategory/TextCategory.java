@@ -13,7 +13,7 @@ public class TextCategory {
 
     public static void main(String[] args) {
     
-        File wikipediaDataset = new File("C:\\Users\\Wilk Oliveira\\Documents\\GitHub\\TextCategory\\files\\wikipediadataset.csv"); // Pega o arquivo .csv a ser trabalhado
+        File wikipediaDataset = new File("C:\\Users\\Wilk Oliveira\\Documents\\GitHub\\TextCategory\\files\\test.csv"); // Pega o arquivo .csv a ser trabalhado
         
         /**
          * Deixa todo o código dentro de try-catch para controlar erros nativos de arquivo não encontrado
@@ -32,10 +32,16 @@ public class TextCategory {
                         linhasDoArquivo = leitor.nextLine(); // Variavel "linhasDoArquivo" recebe proxíma linha disponível no arquivo
                         
                         String[] txtEntreVirgula = linhasDoArquivo.split(","); // Cria um vetor com uma semparação de coluna cada ","
-                        StringTokenizer a=new StringTokenizer(linhasDoArquivo);
+                        StringTokenizer title=new StringTokenizer(txtEntreVirgula[0]);
+                        StringTokenizer category=new StringTokenizer(txtEntreVirgula[1]);
+                        StringTokenizer text=new StringTokenizer(txtEntreVirgula[2]);
                         
                         System.out.println(txtEntreVirgula[0]);
-                        System.out.println(a.countTokens());
+                        System.out.println(txtEntreVirgula[1]);
+                        System.out.println(txtEntreVirgula[2]);
+                        System.out.println(title.countTokens());
+                        System.out.println(category.countTokens());
+                        System.out.println(text.countTokens());
                         
                     }
             
