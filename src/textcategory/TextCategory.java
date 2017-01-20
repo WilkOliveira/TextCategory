@@ -20,18 +20,20 @@ public class TextCategory {
          */      
         try{
             
+            int technologyCategory = 0;
+            
             String linhasDoArquivo = new String(); // Cria String "linhasDoArquivo"
             
-            Scanner leitor = new Scanner(wikipediaDataset); // Criar um leitor parar ler o arquivo recebido
+            Scanner arquivo = new Scanner(wikipediaDataset); // Criar um leitor parar ler o arquivo recebido
                     
                     /**
                      * Enquanto o arquivo tiver uma nova linha, continua fazendo sua leitura linha por linha
                      */
-                    while (leitor.hasNext()){
+                    while (arquivo.hasNext()){
                         
-                        linhasDoArquivo = leitor.nextLine(); // Variavel "linhasDoArquivo" recebe proxíma linha disponível no arquivo
+                        linhasDoArquivo = arquivo.nextLine(); // Variavel "linhasDoArquivo" recebe proxíma linha disponível no arquivo
                         
-                        String[] palavra = linhasDoArquivo.split("tecnology"); // Cria um vetor de Strings com a palavra "tecnology"
+                        // String[] palavra = linhasDoArquivo.split("tecnology"); // Cria um vetor de Strings com a palavra "tecnology"
                         
                         String[] txtEntreVirgula = linhasDoArquivo.split(","); // Cria um vetor de Strings com uma semparação de coluna cada ","
                         /**
@@ -41,19 +43,23 @@ public class TextCategory {
                         StringTokenizer category=new StringTokenizer(txtEntreVirgula[1]);
                         StringTokenizer text=new StringTokenizer(txtEntreVirgula[2]);
                         
+                        if ((txtEntreVirgula[2].contains("computer")) || (txtEntreVirgula[2].contains("notebook"))){
+                            technologyCategory ++;
+                        }
+                            
                         /**
                          * Imprimei os valores de cada coluna/linha (sepaadas por ",")
                          */
-                        System.out.println(txtEntreVirgula[0]);
-                        System.out.println(txtEntreVirgula[1]);
-                        System.out.println(txtEntreVirgula[2]);
+                        //System.out.println(txtEntreVirgula[0]);
+                        //System.out.println(txtEntreVirgula[1]);
+                        //System.out.println(txtEntreVirgula[2]);
                         /**
                          * Imprime a quantidade de palavras em cada coluna/linha
                          */
-                        System.out.println(title.countTokens());
-                        System.out.println(category.countTokens());
-                        System.out.println(text.countTokens());
-                        
+                        //System.out.println(title.countTokens());
+                        //System.out.println(category.countTokens());
+                        //System.out.println(text.countTokens());
+                         System.out.println(technologyCategory);
                     }
             
         } catch (FileNotFoundException ex) {
