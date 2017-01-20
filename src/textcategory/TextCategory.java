@@ -31,14 +31,25 @@ public class TextCategory {
                         
                         linhasDoArquivo = leitor.nextLine(); // Variavel "linhasDoArquivo" recebe proxíma linha disponível no arquivo
                         
-                        String[] txtEntreVirgula = linhasDoArquivo.split(","); // Cria um vetor com uma semparação de coluna cada ","
+                        String[] palavra = linhasDoArquivo.split("tecnology"); // Cria um vetor de Strings com a palavra "tecnology"
+                        
+                        String[] txtEntreVirgula = linhasDoArquivo.split(","); // Cria um vetor de Strings com uma semparação de coluna cada ","
+                        /**
+                         * Conta a quantidade de palavras em cada coluna/linha
+                         */
                         StringTokenizer title=new StringTokenizer(txtEntreVirgula[0]);
                         StringTokenizer category=new StringTokenizer(txtEntreVirgula[1]);
                         StringTokenizer text=new StringTokenizer(txtEntreVirgula[2]);
                         
+                        /**
+                         * Imprimei os valores de cada coluna/linha (sepaadas por ",")
+                         */
                         System.out.println(txtEntreVirgula[0]);
                         System.out.println(txtEntreVirgula[1]);
                         System.out.println(txtEntreVirgula[2]);
+                        /**
+                         * Imprime a quantidade de palavras em cada coluna/linha
+                         */
                         System.out.println(title.countTokens());
                         System.out.println(category.countTokens());
                         System.out.println(text.countTokens());
