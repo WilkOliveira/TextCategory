@@ -21,7 +21,7 @@ public class TextCategory {
         String linhasDoArquivo;
         Map<String,Integer> mapPalavras;
         int i = 1;
-        int technologyCategory = 0, EnergyCategory = 0, ConsumerCategory = 0, FinancialCategory =0; // Armazenarão quantidade de repetições de palavras em cada categoria
+        Integer technologyCategory = 0, energyCategory = 0, consumerCategory = 0, financialCategory =0; // Armazenarão quantidade de repetições de palavras em cada categoria
         
         /**
          * Deixa todo o código dentro de try-catch para controlar erros nativos de arquivo não encontrado
@@ -54,20 +54,59 @@ public class TextCategory {
                         while(m.find())
                         {
                             String token = m.group(); // Pega uma palavra
-                            Integer freq = mapPalavras.get(token); // Identifica se a palavra já foi mapeada
+                            technologyCategory = mapPalavras.get(token);
+                            energyCategory = mapPalavras.get(token);
+                            consumerCategory = mapPalavras.get(token);
+                            financialCategory = mapPalavras.get(token);
 				
-                                /**
-                                 * Se palavra existir, atualiza a frequencia, 
-                                 * Senão, cria um novo id e insere a palavra nesse id com frequência = 1 
-                                 * - PRECISO PEGAR SOMENTE A FREQUÊNCIA DE PALAVRAS ESPECIFICAS RELACIONADAS A CADA CATEGORIA E ARMAZENAR NAS VARIAVEIS QUE JÁ FORAM CRIADAS
-                                 * - POR EXEMPLO, SE APARECE A PALAVRA "computer" ou "mobile" ou "device",  INCREMENTAR A VARIAVÉL "technologyCategory" E ASSIM POR DIANTE
+				/**
+                                 * Armazena as palavras relacionadas a categoria tecnologia
                                  */
-				if (freq != null) {
-					mapPalavras.put(token, freq+1);
+				if (technologyCategory != null) {
+                                    if(token.equals("technology") || token.equals("computer") || token.equals("informatics") || token.equals("mobile"))
+					mapPalavras.put(token, technologyCategory+1);
 				}
 				else {
+                                    if(token.equals("technology") || token.equals("computer") || token.equals("informatics") || token.equals("mobile"))
 					mapPalavras.put(token,1);
 				}
+                                
+                                /**
+                                 * Armazena as palavras relacionadas a categoria energia
+                                 */
+				if (energyCategory != null) {
+                                    if(token.equals("energy") || token.equals("power") || token.equals("electricity"))
+					mapPalavras.put(token, energyCategory+1);
+				}
+				else {
+                                    if(token.equals("energy") || token.equals("power") || token.equals("electricity"))
+					mapPalavras.put(token,1);
+				}
+                                
+                                /**
+                                 * Armazena as palavras relacionadas a categoria consumo
+                                 */
+				if (consumerCategory != null) {
+                                    if(token.equals("consumer") || token.equals("money") || token.equals("consumerism") || token.equals("sale"))
+					mapPalavras.put(token, consumerCategory+1);
+				}
+				else {
+                                    if(token.equals("consumer") || token.equals("money") || token.equals("consumerism") || token.equals("sale"))
+					mapPalavras.put(token,1);
+				}
+                                
+                                /**
+                                 * Armazena as palavras relacionadas a categoria financeiro
+                                 */
+				if (financialCategory != null) {
+                                    if(token.equals("financial") || token.equals("exchange") || token.equals("banck") || token.equals("economy"))
+					mapPalavras.put(token, financialCategory+1);
+				}
+				else {
+                                    if(token.equals("financial") || token.equals("exchange") || token.equals("banck") || token.equals("economy"))
+					mapPalavras.put(token,1);
+				}
+                                
                         }
                         
                         System.out.println("- Texto " +i +" -");
