@@ -17,7 +17,7 @@ public class TextCategory {
 
     public static void main(String[] args) {
     
-        File wikipediaDataset = new File("C:\\Users\\Wilk\\Documents\\GitHub\\TextCategory\\files\\test.csv"); // Pega o arquivo .csv a ser trabalhado
+        File wikipediaDataset = new File("C:\\Users\\Wilk Oliveira\\Documents\\GitHub\\TextCategory\\files\\test.csv"); // Pega o arquivo .csv a ser trabalhado
         String linhasDoArquivo;
         Map<String,Integer> mapPalavras;
         int i = 1;
@@ -64,11 +64,11 @@ public class TextCategory {
                                  */
 				if (technologyCategory != null) {
                                     if(token.equals("technology") || token.equals("computer") || token.equals("informatics") || token.equals("mobile"))
-					mapPalavras.put(token, technologyCategory+1);
+					mapPalavras.put("technology", technologyCategory+1);
 				}
 				else {
                                     if(token.equals("technology") || token.equals("computer") || token.equals("informatics") || token.equals("mobile"))
-					mapPalavras.put(token,1);
+					mapPalavras.put("technology",1);
 				}
                                 
                                 /**
@@ -76,11 +76,11 @@ public class TextCategory {
                                  */
 				if (energyCategory != null) {
                                     if(token.equals("energy") || token.equals("power") || token.equals("electricity"))
-					mapPalavras.put(token, energyCategory+1);
+					mapPalavras.put("energy", energyCategory+1);
 				}
 				else {
                                     if(token.equals("energy") || token.equals("power") || token.equals("electricity"))
-					mapPalavras.put(token,1);
+					mapPalavras.put("energy",1);
 				}
                                 
                                 /**
@@ -88,11 +88,11 @@ public class TextCategory {
                                  */
 				if (consumerCategory != null) {
                                     if(token.equals("consumer") || token.equals("money") || token.equals("consumerism") || token.equals("sale"))
-					mapPalavras.put(token, consumerCategory+1);
+					mapPalavras.put("consumer", consumerCategory+1);
 				}
 				else {
                                     if(token.equals("consumer") || token.equals("money") || token.equals("consumerism") || token.equals("sale"))
-					mapPalavras.put(token,1);
+					mapPalavras.put("consumer",1);
 				}
                                 
                                 /**
@@ -100,11 +100,11 @@ public class TextCategory {
                                  */
 				if (financialCategory != null) {
                                     if(token.equals("financial") || token.equals("exchange") || token.equals("banck") || token.equals("economy"))
-					mapPalavras.put(token, financialCategory+1);
+					mapPalavras.put("financial", financialCategory+1);
 				}
 				else {
                                     if(token.equals("financial") || token.equals("exchange") || token.equals("banck") || token.equals("economy"))
-					mapPalavras.put(token,1);
+					mapPalavras.put("financial",1);
 				}
                                 
                         }
