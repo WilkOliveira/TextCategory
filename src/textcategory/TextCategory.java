@@ -32,20 +32,20 @@ public class TextCategory {
             Scanner arquivo = new Scanner(wikipediaDataset); // Criar um leitor parar ler o arquivo recebido
             mapPalavras = new HashMap<String,Integer>(); // Para armazenar as palavras
                     
-                    /**
-                     * Enquanto o arquivo tiver uma nova linha, continua fazendo sua leitura linha por linha
-                     */
-                    while (arquivo.hasNext()){
+                /**
+                 * Enquanto o arquivo tiver uma nova linha, continua fazendo sua leitura linha por linha
+                 */
+                while (arquivo.hasNext()){
                         
-                        linhasDoArquivo = arquivo.nextLine(); // Variavel "linhasDoArquivo" recebe proxíma linha disponível no arquivo
-                        String[] txtEntreVirgula = linhasDoArquivo.split(","); // Cria um vetor de Strings com uma semparação de coluna cada ","
+                    linhasDoArquivo = arquivo.nextLine(); // Variavel "linhasDoArquivo" recebe proxíma linha disponível no arquivo
+                    String[] txtEntreVirgula = linhasDoArquivo.split(","); // Cria um vetor de Strings com uma semparação de coluna cada ","
                         
-                        /**
-                         * Usa expressão regular pegar caracteres especiais
-                         * Faz sentido quando pensamos em textos em português
-                         */
-                        Pattern p = Pattern.compile("(\\d+)|([a-záéíóúçãõôê]+)");
-                        Matcher m = p.matcher(linhasDoArquivo);
+                     /**
+                      * Usa expressão regular pegar caracteres especiais
+                      * Faz sentido quando pensamos em textos em português
+                      */
+                    Pattern p = Pattern.compile("(\\d+)|([a-záéíóúçãõôê]+)");
+                    Matcher m = p.matcher(linhasDoArquivo);
                         
                         /**
                          * Contador de frenquência de palavras
